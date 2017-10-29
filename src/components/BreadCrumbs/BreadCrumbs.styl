@@ -1,0 +1,38 @@
+.BreadCrumbs
+    padding 20px
+    text-align left
+
+    .item
+        display inline-block
+        padding 5px 0 5px 10px
+        color rgba(0,0,0,.7)
+        text-decoration none
+        transition .3s ease-out
+        transition-property transform, opacity, text-shadow
+
+        &::after
+            content '/'
+            margin-left 10px
+            opacity .3
+
+        &:last-child
+            text-shadow 0 0 1px rgba(0,0,0,.4)
+            pointer-events none
+
+            &::after
+                content none
+
+        &:hover
+            color #007d7d
+
+            &::after
+                color rgba(0,0,0,.7)
+
+        // transtiions
+        &.fade-enter
+        &.fade-leave-active
+            opacity 0
+        &.fade-enter
+            transform translateX(-20px)
+        &.fade-leave-active
+            transform translateX(20px)
